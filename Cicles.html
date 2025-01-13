@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Sameer Ali - Front-end Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 1439px;
+            height: 630px;
+            position: absolute;
+            top: 210px;
+            left: 0.31px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            opacity: 1;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+            margin-top: -50px;
+            height: 100%;
+        }
+
+        .text-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            position: relative;
+            top: 130px;
+            margin-left: 75px;
+        }
+
+        .text-content span {
+            color: #ffd700;
+        }
+
+        .text-content p {
+            font-size: 1.4rem;
+            font-family: serif;
+            color: rgb(125, 127, 127);
+            line-height: 1.4;
+            margin-bottom: 200px;
+            margin-top: 160px;
+            margin-left: 75px;
+        }
+
+        .image-content {
+            width: 400px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .image-content img {
+            width: 808px;
+            height: 550px;
+            top: 231.59px;
+            left: 580px;
+            right: 0;
+        }
+
+        .hire-me-btn {
+            display: inline-block;
+            background-color: #FFC107;
+            color: #000;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .btn {
+            position: relative;
+            left: 75px;
+            bottom: 60px;
+        }
+
+        .hire-me-btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Circles */
+        .circle1, .circle2, .circle3, .circle4 {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        /* Circle 1: Above "I'm" text */
+        .circle1 {
+            width: 22.83px;
+            height: 21.58px;
+            border: 2px solid #FFB400CC;
+            top: 0px; /* Adjusted according to the new layout */
+            left: 50px;
+        }
+
+        /* Circle 2: Behind "Hire Me" button */
+        .circle2 {
+            width: 22.83px;
+            height: 21.58px;
+            border: 2px solid #05FF00CC;
+            top: 610px;
+            left: 120px;
+            z-index: 1; /* Behind the button */
+        }
+
+        /* New Circle 3: Upper left side of the image */
+        .circle3 {
+            width: 22.83px;
+            height: 21.58px;
+            border: 2px solid #48ff00b1;
+            top: 5px;
+            left: 700px; /* Aligned on the image */
+        }
+
+        /* New Circle 4: Bottom left side of the image */
+        .circle4 {
+            width: 22.83px;
+            height: 21.58px;
+            border: 2px solid #ffff00ed;
+            bottom: 160px;
+            left: 790px;
+        }
+
+        /* Rectangles */
+        .rectangle1, .rectangle2, .rectangle3 {
+            position: absolute;
+            width: 22.6px;
+            height: 21.83px;
+            background-color: white;
+            opacity: 1;
+            transform: rotate(-24.8deg);
+        }
+
+        /* Rectangle 1: Below the paragraph */
+        .rectangle1 {
+            top: 430px; /* Adjusted to align with text */
+            left: 470px;
+            border: 2px solid blue;
+
+        }
+
+      
+
+        /* Rectangle 3: Top-right of the image */
+        .rectangle3 {
+            background-color: white;
+            top: 50px;
+            right: 140px;
+            transform: rotate(-24.8deg);
+            border: 2px solid #FFB400CC;
+        }
+
+        /* Polygon at bottom-right of the image */
+        .polygon {
+            position: absolute;
+            width: 22.83px;
+            height: 21.58px;
+            background-color: #D4A200;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            bottom: 151px;
+            right: 100px;
+            border: 2px solid #FF2E00CC;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-content">
+            <h1>I'm Md Sameer Ali <br><span>Front-end </span>Developer</h1>
+            <p>I use web languages like HTML, CSS, and JavaScript to create the graphical user interface (UI) that users see and interact with. They are responsible for the visual and interactive aspects of a website or app.</p>
+            
+            <div class="btn"><a href="#contact" class="hire-me-btn">Hire Me &#x1F806;</a></div>
+
+            <!-- Circle 1: Positioned above the text "I'm" -->
+            <div class="circle1"></div>
+
+            <!-- Circle 2: Positioned behind the "Hire Me" button -->
+            <div class="circle2"></div>
+
+            <!-- Rectangle 1: Positioned below the paragraph -->
+            <div class="rectangle1"></div>
+           
+        </div>
+        
+        <div class="image-content">
+            <!-- New Circle 3: Positioned on the upper left of the image -->
+            <div class="circle3"></div>
+
+            <!-- New Circle 4: Positioned on the bottom left of the image -->
+            <div class="circle4"></div>
+
+            <!-- Rectangle 3: Positioned on the top-right of the image -->
+            <div class="rectangle3"></div>
+
+            <!-- Polygon: Positioned on the bottom-right of the image -->
+            <div class="polygon"></div>
+
+            <!-- Image -->
+            <img src="images/picture.png" alt="Example Image" />
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Page</title>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f6;
+            /* padding: 20px;
+            display: flex;
+            justify-content: center;*/
+        } 
+        nav {
+    background: rgba(255, 255, 255, 1);
+    width: 100%; /* Make the navbar span the full width of the page */
+    height: 142px; /* Fixed height */
+    padding: 38px 16px 38px 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    opacity: 1; /* Set to 1 to make it fully visible */
+}
+
+.navbar-brand img {
+    height: 100px; /* Adjust logo size */
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 40px; /* Add spacing between menu items */
+}
+
+.navbar-menu li {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar-menu a {
+    color: #020202;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    background-color: #87877f;
+    border-radius: 4px;
+}
+
+.navbar-menu a.active {
+    background-color: #FFC107;
+    color: #000001;
+    border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .navbar-menu li {
+        margin-top: 10px;
+    }
+}
+
+
+        .skills-containerbox {
+            /* width: 1440px; */
+            text-align: center;
+           padding-top: 175px;
+           max-width: 100%;
+            max-height: auto;
+            position: relative;
+            left: 720px;
+           
+        }
+
+        /* Heading and paragraph */
+        .skills-heading {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .skills-paragraph {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 40px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Boxes for skills */
+        .skills-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 385px); /* 3 boxes per row */
+            grid-template-rows: repeat(2, 316px); /* 2 rows of boxes */
+            justify-content: center;
+            gap: 20px; /* Space between boxes */
+            margin-bottom: 40px;
+        }
+
+        .box {
+            width: 385px;
+            height: 316px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .box h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        /* Skill name and percentage on one line */
+        .skill-name-percentage {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* Proficiency Bar */
+        .proficiency-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 4px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: #b58600;
+            border-color: #ebb514;
+         
+            
+        }
+
+        .proficiency-fill {
+            height: 100%;
+            background-color: #e0a800;
+            border-radius: 4px;
+        }
+
+        /* Add Skill Button */
+        #add-skill-btn {
+            width: 151px;
+            height: 50.83px;
+            background-color: #e0a800;
+            color: #141313;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto; /* Centers the button */
+        }
+
+        #add-skill-btn:hover {
+            background-color: #b58600;
+        }
+        /* #layout{
+            max-width: 100%;
+            max-height: auto;
+            position: relative;
+            left: 720px; */
+        /* } */
+        /* Dialog bar */
+        .dialog {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+        .dialog-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 833px; /* Fixed width */
+            height: 895px; /* Fixed height */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dialog h2 {
+            margin-bottom: 20px;
+        }
+        .dialog label {
+            margin: 10px 0 5px;
+            display: block;
+        }
+        .dialog input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px; /* Space between fields */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #F0F0F6; /* Background color */
+        }
+        .dialog input[type="text"].domain {
+            width: 777px; /* Domain input */
+            height: 74px; /* Height */
+        }
+        .dialog input[type="text"].skills {
+            width: 606px; /* Skills input */
+            height: 74px; /* Height */
+        }
+        .dialog input[type="text"].proficiency {
+            width: 150px; /* Proficiency input */
+            height: 74px; /* Height */
+        }
+        .dialog .skills-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .dialog button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            width: 152px;
+            height: 51px;
+        }
+        .dialog .add-skill-btn {
+            background-color: #e0a800; /* Add skill button */
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(13, 13, 13);
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .dialog #add-skill-btn:hover {
+            background-color: #d69a00;
+        }
+        .dialog .cancel-btn {
+            background-color: white; /* Cancel button */
+            color: red;
+            font-size: 15px;
+            border: 1px solid red;
+        }
+        .dialog .cancel-btn:hover {
+            background-color: red;
+            color: white;
+        }
+        .dialog-content h1{
+            text-align: center;
+        }
+     
+       
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="images/mainLogo.png" alt="logo">
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/Skill.html">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Main Container for Skills Page -->
+    
+        <div class="skills-container">
+
+            <!-- Heading and Paragraph -->
+            <h2 class="skills-heading">Skills and Language</h2>
+            <p class="skills-paragraph">Here is a brief overview of my technical skills and the languages I am proficient in. These skills represent my core strengths and areas of expertise.</p>
+    
+            <!-- Skill Boxes -->
+            <div class="skills-boxes">
+    
+                <!-- Box 1: Front Development -->
+                <div class="box">
+                    <h3>Front Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>React</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>WordPress</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Box 2: Back Development -->
+                <div class="box">
+                    <h3>Back Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>Node.js</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Box 3: Web Technologies -->
+                <div class="box">
+                    <h3>Web Technologies</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>WordPress</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>React</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Box 4: Languages -->
+                <div class="box">
+                    <h3>Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>English</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>French</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>Spanish</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>German</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>Hindi</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Box 5: Data Management -->
+                <div class="box">
+                    <h3>Data Management</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>SQL</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>MongoDB</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Box 6: Cloud Services -->
+                <div class="box">
+                    <h3>Cloud Services</h3>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>AWS</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name-percentage">
+                            <span>Azure</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <!-- Add Skill Button -->
+            <button id="add-skill-btn">Add Skill</button>
+         
+        </div>
+    
+   
+    
+    <div id="skillDialog" class="dialog">
+    
+        <div class="dialog-content">
+           <h1>Add Skill</h1>
+            <h2>Domain (required)</h2>
+            <input type="text" class="domain" placeholder="Enter Domain">
+    
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div>
+                    <label>Skill</label>
+                    <input type="text" class="skills" id="skill1" placeholder="Skill 1">
+                    <input type="text" class="skills" id="skill2" placeholder="Skill 2">
+                    <input type="text" class="skills" id="skill3" placeholder="Skill 3">
+                    <input type="text" class="skills" id="skill4" placeholder="Skill 4">
+                    <input type="text" class="skills" id="skill5" placeholder="Skill 5">
+                </div>
+                <div>
+                    <label>Proficiency %</label>
+                    <input type="text" class="proficiency" id="proficiency1" placeholder="%">
+                    <input type="text" class="proficiency" id="proficiency2"  placeholder="%">
+                    <input type="text" class="proficiency" id="proficiency3" placeholder="%">
+                    <input type="text" class="proficiency" id="proficiency4" placeholder="%">
+                    <input type="text" class="proficiency" id="proficiency5" placeholder="%">
+                </div>
+            </div>
+            
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="add-skill-btn" type="button" onclick="submitSkill()">Add Skill</button>
+                <button class="cancel-btn" type="button" onclick="cancelSkill()">Cancel</button>
+            </div>
+        </div>
+    </div>
+     
+
+<script>
+            // Open the dialog when the button is clicked
+            document.getElementById("add-skill-btn").onclick = function() {
+                document.getElementById("skillDialog").style.display = "block";
+            }
+        
+            // Function to handle submission
+            function submitSkill() {
+                // You can handle form submission here
+                alert("Skill added!");
+                // Hide the dialog after submission
+                document.getElementById("skillDialog").style.display = "none";
+            }
+        
+            // Function to handle cancel
+            function cancelSkill() {
+                // Hide the dialog
+                document.getElementById("skillDialog").style.display = "none";
+            }
+        
+            // Close the dialog when clicking outside of it
+            window.onclick = function(event) {
+                if (event.target === document.getElementById("skillDialog")) {
+                    document.getElementById("skillDialog").style.display = "none";
+                }
+            }
+        function submitSkill() {
+        // Get the input values from the form
+        const domain = document.querySelector('.domain').value;
+        const skills = [
+            document.getElementById('skill1').value,
+            document.getElementById('skill2').value,
+            document.getElementById('skill3').value,
+            document.getElementById('skill4').value,
+            document.getElementById('skill5').value
+        ];
+        const proficiencies = [
+            document.getElementById('proficiency1').value,
+            document.getElementById('proficiency2').value,
+            document.getElementById('proficiency3').value,
+            document.getElementById('proficiency4').value,
+            document.getElementById('proficiency5').value
+        ];
+    
+       
+        let hasError = false;
+        for (let i = 0; i < skills.length; i++) {
+            if (skills[i] && !proficiencies[i]) {
+                alert(`Please provide the Proficiency % for Skill ${i + 1}.`);
+                hasError = true;
+                break;
+            }
+        }
+    
+        if (hasError) {
+            return; 
+        }
+    
+        
+        console.log(`Domain: ${domain}`);
+        skills.forEach((skill, index) => {
+            if (skill) {
+                console.log(`Skill ${index + 1}: ${skill}, Proficiency: ${proficiencies[index]}%`);
+            }
+        });
+    
+       
+        alert('Skills added successfully!');
+        closeDialog(); 
+    }
+    
+    function cancelSkill() {
+       
+        closeDialog();
+    }
+    
+    function closeDialog() {
+        const dialog = document.getElementById('skillDialog');
+        dialog.style.display = 'none';
+    }
+    
+    
+    function openSkillDialog() {
+        const dialog = document.getElementById('skillDialog');
+        dialog.style.display = 'block';
+    }
+    
+    </script>
+    
+</body>
+</html>

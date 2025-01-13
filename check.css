@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Main Section Heading */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+   
+    color: #333;
+}
+.paragraph {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    max-width: 785px; /* Set width to span between 1st and 3rd cards */
+    margin: 20px auto 40px; /* Center the paragraph with space above and below */
+}
+/* Card Container */
+.container1 {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards to the next line */
+    justify-content: space-between; /* Equal space between cards */
+    gap: 45px; /* 45px gap between the cards */
+    max-width: 1245px; /* Set container width to 1245px */
+    margin: auto;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 385px; /* Set card width */
+    height: 465px; /* Set card height */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden; /* Hide overflow for image scaling */
+    margin-bottom: 20px;
+}
+
+/* Image Styling */
+.card img {
+    width: 385px; /* Set image width */
+    height: 256px; /* Set image height */
+    object-fit: cover; /* Make sure the image fills the card completely */
+}
+
+
+/* Text content inside the card */
+.card p {
+    font-size: 1.0rem;
+    line-height: 1.5;
+    color: #555;
+    padding: 5px;
+    text-align: left;
+    margin-left: 20px;
+}
+.card span{
+font-size: 1.4rem;
+line-height: 1.5;
+margin-right: 130px;
+margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(48% - 30px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* 1 card per row on mobile screens */
+    }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form and Info</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F6;
+            padding: 20px;
+        }
+
+        /* Main container for both sections */
+        .main-container {
+            width: 1440px;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Adjust gap between form and contact info */
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Section headings */
+        .section-heading {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 35px; /* Space below headings */
+        }
+
+        /* Form container */
+        .form-container {
+            width: 846px;
+            height: auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* Styling for the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .circle {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 180, 0, 1);
+            
+            border-radius: 50%; /* Makes the shape circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            margin-left: 140px;
+            position: relative;
+            bottom: 20px;
+
+        }
+
+        /* Image styling */
+        .circle img {
+            width: 70%; /* Adjust size of the image inside the circle */
+            height: 70%;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #F0F0F6;
+        }
+
+        textarea {
+            height: 300px;
+            resize: vertical;
+        }
+
+        /* Custom Button */
+        .submit-btn {
+            width: 151px;
+            height: 50.83px;
+            background-color: #e0a800;
+            color: #141313;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #555;
+        }
+
+        /* Contact Information Section */
+        .contact-info {
+            width: 372.7px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #f1f1f1;
+            margin-right: 100px;
+        }
+
+        /* Three Boxes for Contact Information */
+        .info-box {
+            width: 90%;
+            height: calc(700.67px / 3); /* Divide height equally */
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 20px; /* Add space between boxes */
+        }
+
+        /* Flex layout for each info box */
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Form Section with Heading Outside -->
+        <div>
+            <h2 class="section-heading">Leave Me Your Info</h2> <!-- Heading Outside the Form -->
+            <div class="form-container">
+                <form id="contactForm">
+                    <label for="name">Name (required):</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email (required):</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+
+                    <label for="message">Leave Message:</label>
+                    <textarea id="message" name="message"></textarea>
+
+                    <!-- Custom Button with Specified Dimensions -->
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Information Section with Heading Outside -->
+        <div>
+            <h2 class="section-heading">Contact Information</h2> <!-- Heading Outside the Contact Info -->
+            <div class="contact-info">
+
+                <!-- Box 1 -->
+                <div class="info-box">
+                    <div class="circle">
+                        <img src="images/Vector.png" alt="Logo">
+                    </div>
+                    <div class="info-item">
+                        <span>Country:</span>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <span>City:</span>
+                        <span>Bengaluru</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Street:</span>
+                        <span>Teacher Colony</span>
+                    </div>
+                </div>
+
+                <!-- Box 2 -->
+                <div class="info-box">
+                    <div class="circle">
+                        <img src="images/mail.png" alt="Logo">
+                    </div>
+                    <div class="info-item">
+                        <span>Country:</span>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <span>City:</span>
+                        <span>Bengaluru</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Street:</span>
+                        <span>Teacher Colony</span>
+                    </div>
+                </div>
+
+                <!-- Box 3 -->
+                <div class="info-box">
+                    <div class="circle">
+                        <img src="images/location.png" alt="Logo">
+                    </div>
+                    <div class="info-item">
+                        <span>Email</span>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Skype</span>
+                        <span>Bengaluru</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Stelegram</span>
+                        <span>Teacher Colony</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Get the current date
+            const currentDate = new Date();
+            console.log("Form submitted on: " + currentDate);
+            console.log("Name: " + name);
+            console.log("Email: " + email);
+            console.log("Subject: " + subject);
+            console.log("Leave Message: " + message);
+
+            // Show confirmation dialog
+            alert("Your Form is submitted Successfully ");
+        });
+    </script>
+
+</body>
+</html>

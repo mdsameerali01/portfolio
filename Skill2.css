@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f6;
+    padding: 20px;
+    
+}
+nav {
+background: rgba(255, 255, 255, 1);
+width: Fixed (1,440px)px;
+height: Fixed (142px)px;
+padding: 38px 16px 38px 96px;
+gap: 0px;
+justify-content: space-between;
+opacity: 0px;
+transform: rotate(-0deg);
+display: flex;
+align-items: center;
+position: fixed;
+width: 100%;
+top: 0; /* Ensures the navbar sticks at the top */
+left: 0;
+z-index: 1000; /* Keeps the navbar above other content */
+
+
+}
+
+.navbar-brand .brand {
+color: #070707;
+font-size: 1.5rem;
+text-decoration: none;
+}
+
+.navbar-menu {
+list-style-type: none;
+display: flex;
+}
+
+.navbar-menu li {
+/* margin-left: 30px; */
+width: Hug (604px)px;
+height: Hug (37px)px;
+gap: 40px;
+opacity: 0px;
+transform: rotate(-0deg);
+font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+color: rgb(0, 0, 1);
+
+}
+
+.navbar-menu a {
+color: #020202;
+text-decoration: none;
+font-size: 1rem;
+padding: 8px 15px;
+transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+background-color: #87877f;
+border-radius: 4px;
+}
+.navbar-menu a.active {
+background-color: #FFC107; /* Make the background white for the active link */
+color: rgb(0, 0, 1);
+border-radius: 4px;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+.navbar-menu {
+flex-direction: column;
+align-items: flex-end;
+}
+
+.navbar-menu li {
+margin-left: 0;
+margin-top: 10px;
+}
+}
+
+.skills-container {
+    /* width: 1440px; */
+    text-align: center;
+   padding-top: 175px;
+    position: relative;
+    transition: color 0.3s ease;
+   
+}
+
+/* Heading and paragraph */
+.skills-heading {
+    
+    color: #333;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.skills-paragraph {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 40px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Boxes for skills */
+.skills-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 385px); /* 3 boxes per row */
+    grid-template-rows: repeat(2, 316px); /* 2 rows of boxes */
+    justify-content: center;
+    gap: 20px; /* Space between boxes */
+    margin-bottom: 40px;
+}
+
+.box {
+    width: 385px;
+    height: 316px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+}
+
+.box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+/* Skill name and percentage on one line */
+.skill-name-percentage {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Proficiency Bar */
+.proficiency-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 4px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: #b58600;
+    border-color: #ebb514;
+ 
+    
+}
+
+.proficiency-fill {
+    height: 100%;
+    background-color: #e0a800;
+    border-radius: 4px;
+}
+
+/* Add Skill Button */
+#add-skill-btn {
+    width: 151px;
+    height: 50.83px;
+    background-color: #e0a800;
+    color: #141313;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto; 
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#add-skill-btn:hover {
+    background-color: #b58600;
+}
+/* #layout{
+    max-width: 100%;
+    max-height: auto;
+    position: relative;
+    left: 720px; */
+/* } */
+/* Dialog bar */
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.dialog-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 833px; /* Fixed width */
+    height: 895px; /* Fixed height */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dialog h2 {
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.dialog label {
+    margin: 10px 0 5px;
+    display: block;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.dialog input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px; /* Space between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F0F0F6; /* Background color */
+}
+.dialog input[type="text"].domain {
+    width: 777px; /* Domain input */
+    height: 74px; /* Height */
+}
+.dialog input[type="text"].skills {
+    width: 606px; /* Skills input */
+    height: 74px; /* Height */
+}
+.dialog input[type="text"].proficiency {
+    width: 150px; /* Proficiency input */
+    height: 74px; /* Height */
+}
+.dialog .skill-container {
+    display: flex;
+    justify-content: space-between;
+}
+.dialog button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 152px;
+    height: 51px;
+}
+.dialog .add-skill-btn {
+    background-color: #e0a800; /* Add skill button */
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(13, 13, 13);
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 15px;
+}
+.dialog #add-skill-btn:hover {
+    background-color: #d69a00;
+}
+.dialog .cancel-btn {
+    background-color: white; /* Cancel button */
+    color: red;
+    font-size: 15px;
+    border: 1px solid red;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+ 
+}
+.dialog .cancel-btn:hover {
+    background-color: red;
+    color: white;
+}
+.dialog-content h1{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-size: 30px;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    padding: 0 0 20px 0;
+    margin: auto;
+    position: relative;
+    top: 90px;
+}
+
+/* First Section - 4 frames (images) */
+.frames-container {
+    width: 50%;
+    height: 144px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Space below this section */
+    margin-left: 220px;
+}
+
+.frame {
+    width: 0%; /* 970px / 4 */
+    height: 144px;
+ 
+  
+}
+
+/* Second Section */
+.second-container {
+    width: 100%;
+    height: 321px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Reduced space between containers */
+    align-items: flex-end; /* Align items to the bottom */
+}
+
+/* Left Side - Two Images */
+.left-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the two images */
+}
+
+/* First Image: Logo */
+.logo {
+    width: 158px;
+    height: 76px;
+    margin-left: 40px;
+    
+}
+
+/* Second Image */
+.second-image {
+    width: 177px;
+    height: 230px;
+    position: relative;
+    top: 30px;
+    padding: 28px;
+}
+
+/* Quick Links, Portfolio, Connect Section */
+.quick-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    align-items: flex-start;
+    padding-left: 300px;
+    position: relative;
+    left: 60px;
+}
+
+/* Quick Links */
+.quick-links-section {
+    width: 250px; /* Decreased the width */
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+    text-decoration-color: black;
+    text-decoration: #333;
+}
+
+/* Portfolio */
+.portfolio-section {
+    width: 250px; /* Decreased the width */
+}
+
+/* Connect */
+.connect-section {
+    width: 250px; /* Decreased the width */
+}
+
+/* Only Image in Connect Section */
+.connect-section img {
+    width: 125px;
+    height: 107px;
+    margin-top: 15px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    
+    font-size: 1rem;
+    position: relative;
+    width: 100%;
+    bottom: -100px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations Carousel</title>
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: flex-start; /* Align items to the top */
+            padding: 20px;
+            background-color: #f4f4f4; /* Background color for visibility */
+        }
+
+        /* Recommendations Container */
+        .recommendations-container {
+           max-width: 1340px;
+            height: auto; /* Allow height to hug content */
+            background-color: #ffffff; /* White background for the container */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px 30px; /* Added horizontal padding for left and right */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Center text inside */
+            margin-top: 20px; /* Space from the top */
+            margin-left: 100px; /* Space on left side of the container */
+            margin-right: 40px; /* Space on right side of the container */
+        }
+
+        /* Heading styling */
+        h2 {
+            font-size: 2rem; /* Font size for the heading */
+            color: #333; /* Dark color for the heading */
+            margin-bottom: 10px; /* Space below heading */
+        }
+
+        /* Paragraph styling */
+        p {
+            max-width: 800px; /* Set a max width for the paragraph */
+            margin: 0 auto 20px; /* Center the paragraph and add margin below */
+            font-size: 1rem; /* Font size for paragraph */
+            color: #555; /* Slightly lighter color for text */
+            line-height: 1.5; /* Increase line height for readability */
+        }
+
+        /* Carousel styling */
+        .slick-slide img {
+            width: 300px; /* Adjust image width */
+            height: auto; /* Auto height to maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for images */
+        }
+
+        /* Custom styles for slide spacing */
+        .slick-list {
+            padding: 0 60px; /* Add padding to create the cut-off effect */
+        }
+
+        .slick-slide {
+            margin: 0 5px; /* Decreased margin between slides */
+        }
+
+        /* Custom styles for dots */
+        .slick-dots {
+            bottom: -30px; /* Adjust bottom position */
+        }
+
+        .slick-dots li {
+            margin: 0 5px; /* Space between dots */
+        }
+
+        .slick-dots li button:before {
+            color: #ccc; /* Inactive dot color */
+            font-size: 12px; /* Default size for inactive dots */
+            opacity: 0.7;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: yellow; /* Active dot color */
+            font-size: 18px; /* Make the active dot larger */
+            opacity: 1; /* Fully visible */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Recommendations Container -->
+    <div class="recommendations-container">
+        <h2>Recommendations</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+        
+        <!-- Carousel -->
+        <div class="carousel">
+            <div><img src="https://via.placeholder.com/340x327?text=Image+1" alt="Image 1"></div>
+            <div><img src="https://via.placeholder.com/340x327?text=Image+2" alt="Image 2"></div>
+            <div><img src="https://via.placeholder.com/340x327?text=Image+3" alt="Image 3"></div>
+            <div><img src="https://via.placeholder.com/340x327?text=Image+4" alt="Image 4"></div>
+            <div><img src="https://via.placeholder.com/340x327?text=Image+5" alt="Image 5"></div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true, // Enable dots for indicators
+                infinite: true, // Infinite loop sliding
+                speed: 500, // Animation speed
+                autoplay: true, // Enable autoplay
+                autoplaySpeed: 2000, // Set autoplay to 2 seconds
+                slidesToShow: 3, // Show three slides at a time
+                slidesToScroll: 1, // Scroll one slide at a time
+                centerMode: true, // Enable centered mode
+                centerPadding: '0px', // Adjust padding to cut off images partially
+                responsive: [
+                    {
+                        breakpoint: 768, // For smaller devices
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: false, // Disable center mode on smaller devices
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+</body>
+</html>

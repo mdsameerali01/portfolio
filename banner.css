@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 1439px; /* Set width of the container */
+    height: 630px; /* Set height of the container */
+    position: absolute; /* Position the container */
+    top: 210px; /* Set top position */
+    left: 0.31px; /* Set left position */
+    display: flex; /* Use flexbox to align content */
+    justify-content: space-between; /* Spread items apart */
+    /* align-items: center; Vertically center the content */
+    gap: 20px; /* Add some space between text and image */
+    opacity: 1; /* Make the container visible */
+    background: rgba(255, 255, 255, 1);
+}
+
+.text-content {
+    flex: 1; /* Take available space */
+    display: flex; /* Use flexbox to control the layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Ensure button stays at the bottom */
+    text-align: left; /* Align text to the left */
+    max-width: 50%; /* Limit the width to prevent overlap */
+    padding-right: 20px; /* Add some space on the right */
+    margin-top: -50px; /* Adjust upward movement */
+    height: 100%; /* Take full height of the container */
+}
+
+.text-content h1   {
+    font-size: 42px;
+    margin-bottom: 20px;
+    position: relative;
+    top: 130px;
+    margin-left: 75px;
+  }
+
+.text-content span {
+    color: #ffd700;
+
+}
+
+.text-content p {
+    font-size: 1.4rem;
+    font-family: serif;
+    color: rgb(125, 127, 127);
+    line-height: 1.4; /* Reduce line height to fix gap between lines */
+    margin-bottom: 200px; /* Space between paragraph and button */
+    margin-top: 160px;
+    margin-left: 75px;
+}
+
+
+.image-content {
+    width: 400px; /* Set a fixed width for the image container */
+    height: 100%; /* Let the image container take full height */
+    display: flex; /* Align the image container */
+    align-items: center; /* Vertically center the image */
+    justify-content: flex-end; /* Align the image to the right */
+}
+
+.image-content img {
+    width: 808px;
+    height: 550px;
+    top: 231.59px;
+    left: 580px;
+    right: 0;
+    
+}
+.hire-me-btn {
+    display: inline-block;
+    background-color: #FFC107; /* Dark yellow button */
+    color: #000; /* Black text color */
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the left */
+    margin-top: auto; /* Push the button to the bottom */
+}
+.btn{
+    position: relative;
+    left: 75px;
+    bottom: 60px;
+}
+
+.hire-me-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* Optional transition effect for opacity */
+.container:hover {
+    opacity: 1; /* Keep opacity full */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}

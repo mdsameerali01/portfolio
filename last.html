@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Navbar Example</title>
+    <style>
+        /* Basic page reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff9900;
+        }
+
+        /* Content Section Styles */
+        section {
+            height: 100vh;
+            padding: 60px;
+            padding-top: 120px; /* To prevent content from hiding under the navbar */
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* Background color for different sections */
+        #section1 {
+            background-color: #f2f2f2;
+        }
+
+        #section2 {
+            background-color: #e0e0e0;
+        }
+
+        #section3 {
+            background-color: #cfcfcf;
+        }
+
+        #section4 {
+            background-color: #bfbfbf;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Services</a></li>
+            <li><a href="#section4">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Sections -->
+    <section id="section1">
+        <h2>Home Section</h2>
+        <p>Scroll down to see the navbar fixed at the top.</p>
+    </section>
+
+    <section id="section2">
+        <h2>About Section</h2>
+        <p>This is the About section.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Services Section</h2>
+        <p>This is the Services section.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Contact Section</h2>
+        <p>This is the Contact section.</p>
+    </section>
+
+</body>
+</html>

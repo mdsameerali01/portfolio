@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refined Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #F0F0F6;
+            padding: 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            height: auto;
+            padding: 0 0 20px 0;
+            margin: auto;
+        }
+
+        /* First Section - 4 frames (images) */
+        .frames-container {
+            width: 50%;
+            height: 144px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; /* Space below this section */
+            margin-left: 220px;
+        }
+
+        .frame {
+            width: 0%; /* Adjust this if necessary */
+            height: 144px;
+        }
+
+        /* Second Section */
+        .second-container {
+            width: 100%;
+            height: 321px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px; /* Reduced space between containers */
+            align-items: flex-end; /* Align items to the bottom */
+        }
+
+        /* Left Side - Two Images */
+        .left-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between the two images */
+        }
+
+        /* First Image: Logo */
+        .logo {
+            width: 158px;
+            height: 76px;
+            margin-left: 40px;
+        }
+
+        /* Second Image */
+        .second-image {
+            width: 177px;
+            height: 230px;
+            position: relative;
+            top: 30px;
+            padding: 28px;
+        }
+
+        /* Quick Links, Portfolio, Connect Section */
+        .quick-links {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: flex-start;
+            padding-left: 300px;
+            position: relative;
+            left: 60px;
+        }
+
+        /* Quick Links */
+        .quick-links-section {
+            width: 250px; /* Decreased the width */
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* Portfolio */
+        .portfolio-section {
+            width: 250px; /* Decreased the width */
+        }
+
+        /* Connect */
+        .connect-section {
+            width: 250px; /* Decreased the width */
+        }
+
+        /* Only Image in Connect Section */
+        .connect-section img {
+            width: 125px;
+            height: 107px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div id="skills-containerbox">
+   
+    </div>
+
+  
+
+    <div class="main-container">
+
+        <!-- First Section: 4 Frames (Small Images) -->
+        <div class="frames-container">
+            <div class="frame">
+                <img src="images/Frame.png" alt="11">
+            </div>
+            <div class="frame">
+                <img src="images/Frame 1.png" alt="22">
+            </div>
+            <div class="frame">
+                <img src="images/Frame 2.png" alt="33">
+            </div>
+            <div class="frame">
+                <img src="images/Frame 3.png" alt="44">
+            </div>
+        </div>
+
+        <!-- Second Section: Two Images and Links -->
+        <div class="second-container">
+
+            <!-- Left Side: Two Images -->
+            <div class="left-images">
+                <!-- First Image: Logo -->
+                <div class="logo">
+                    <img src="images/mainLogo.png" alt="">
+                </div>
+
+                <!-- Second Image -->
+                <div class="second-image">
+                    <img src="images/Logos.png" alt="">
+                </div>
+            </div>
+
+            <!-- Quick Links, Portfolio, Connect -->
+            <div class="quick-links">
+
+                <!-- Quick Links Section -->
+                <div class="quick-links-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>Skills</li>
+                        <li>Education</li>
+                        <li>Projects</li>
+                        <li>Recommendations</li>
+                    </ul>
+                </div>
+
+                <!-- Portfolio Section -->
+                <div class="portfolio-section">
+                    <h4>Portfolio</h4>
+                    <ul>
+                        <li>Frontend Development</li>
+                        <li>Backend Development</li>
+                        <li>Website Design</li>
+                        <li>Machine Learning</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+
+                <!-- Connect Section -->
+                <div class="connect-section">
+                    <h4>Connect</h4>
+                    <img src="images/Social.png" alt="Small Image">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Copyright, All rights reserved
+    </footer>
+</body>
+</html>

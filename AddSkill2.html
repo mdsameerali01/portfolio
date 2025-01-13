@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Skill Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .dialog {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+        .dialog-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 833px; /* Fixed width */
+            height: 895px; /* Fixed height */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dialog h2 {
+            margin-bottom: 20px;
+        }
+        .dialog label {
+            margin: 10px 0 5px;
+            display: block;
+        }
+        .dialog input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px; /* Space between fields */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #F0F0F6; /* Background color */
+        }
+        .dialog input[type="text"].domain {
+            width: 777px; /* Domain input */
+            height: 74px; /* Height */
+        }
+        .dialog input[type="text"].skills {
+            width: 606px; /* Skills input */
+            height: 74px; /* Height */
+        }
+        .dialog input[type="text"].proficiency {
+            width: 150px; /* Proficiency input */
+            height: 74px; /* Height */
+        }
+        .dialog .skills-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .dialog button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            width: 152px;
+            height: 51px;
+        }
+        .dialog .add-skill-btn {
+            background-color: #e0a800; /* Add skill button */
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(13, 13, 13);
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .dialog .add-skill-btn:hover {
+            background-color: #d69a00;
+        }
+        .dialog .cancel-btn {
+            background-color: white; /* Cancel button */
+            color: red;
+            font-size: 15px;
+            border: 1px solid red;
+        }
+        .dialog .cancel-btn:hover {
+            background-color: red;
+            color: white;
+        }
+        .dialog-content h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<button id="addSkillBtn">Add Skill</button>
+
+<div id="skillDialog" class="dialog">
+    
+    <div class="dialog-content">
+       <h1>Add Skill</h1>
+        <h2>Domain (required)</h2>
+        <input type="text" class="domain" placeholder="Enter Domain">
+
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div>
+                <label>Skill</label>
+                <input type="text" class="skills" placeholder="Skill 1">
+                <input type="text" class="skills" placeholder="Skill 2">
+                <input type="text" class="skills" placeholder="Skill 3">
+                <input type="text" class="skills" placeholder="Skill 4">
+                <input type="text" class="skills" placeholder="Skill 5">
+            </div>
+            <div>
+                <label>Proficiency %</label>
+                <input type="text" class="proficiency" placeholder="%">
+                <input type="text" class="proficiency" placeholder="%">
+                <input type="text" class="proficiency" placeholder="%">
+                <input type="text" class="proficiency" placeholder="%">
+                <input type="text" class="proficiency" placeholder="%">
+            </div>
+        </div>
+        
+        <div style="text-align: right; margin-top: 20px;">
+            <button class="add-skill-btn" type="button" onclick="submitSkill()">Add Skill</button>
+            <button class="cancel-btn" type="button" onclick="cancelSkill()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Open the dialog when the button is clicked
+    document.getElementById("addSkillBtn").onclick = function() {
+        document.getElementById("skillDialog").style.display = "block";
+    }
+
+    // Function to handle submission
+    function submitSkill() {
+        // You can handle form submission here
+        alert("Skill added!");
+        // Hide the dialog after submission
+        document.getElementById("skillDialog").style.display = "none";
+    }
+
+    // Function to handle cancel
+    function cancelSkill() {
+        // Hide the dialog
+        document.getElementById("skillDialog").style.display = "none";
+    }
+
+    // Close the dialog when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target === document.getElementById("skillDialog")) {
+            document.getElementById("skillDialog").style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
